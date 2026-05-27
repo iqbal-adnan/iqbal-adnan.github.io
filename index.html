@@ -12,18 +12,20 @@
 <body>
 <div class="page">
 
-  <header>
+  <header class="site-header">
     <a class="site-name" href="/">Your Name</a>
-    <div class="tagline">PhD Student · Department of Computer Science · Your University</div>
+    <div class="tagline">PhD Student &nbsp;·&nbsp; Department of Computer Science &nbsp;·&nbsp; Your University</div>
   </header>
 
-  <nav>
-    <a href="/" class="active">about</a><span>·</span>
-    <a href="/cv/">cv</a><span>·</span>
-    <a href="/projects/">projects</a><span>·</span>
-    <a href="/publications/">publications</a>
+  <nav class="tabs">
+    <a href="/"            class="active">About</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blogs/">Blogs</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/etc/">Etc</a>
   </nav>
 
+  <!-- Bio -->
   <section>
     <div class="bio">
       <img src="photo.jpg" alt="Portrait" onerror="this.style.display='none'" />
@@ -33,8 +35,9 @@
           intersection of [topic A] and [topic B], with a focus on [specific problem].
         </p>
         <p>
-          I am a PhD student at [University] advised by <a href="#">Prof. Name</a>.
-          Previously, I completed my B.Tech at [Previous Institution].
+          I am a PhD student at <a href="#">Your University</a> advised by
+          <a href="#">Prof. Name</a>. Previously, I completed my B.Tech at
+          <a href="#">Previous Institution</a>.
         </p>
         <p>
           I am broadly interested in [interest 1], [interest 2], and [interest 3].
@@ -43,36 +46,43 @@
     </div>
   </section>
 
+  <!-- News -->
   <section>
     <h2>News</h2>
     <ul class="timeline">
       <li><span class="year">May 2025</span><span>Paper accepted at [Conference Name].</span></li>
       <li><span class="year">Jan 2025</span><span>Started internship at [Lab / Company].</span></li>
       <li><span class="year">Aug 2024</span><span>Joined [University] as a PhD student.</span></li>
+      <li><span class="year">May 2023</span><span>Graduated from [Undergraduate Institution].</span></li>
     </ul>
   </section>
 
+  <!-- Selected Publications -->
   <section>
     <h2>Selected Publications</h2>
     <ul class="pub-list">
       <li>
         <div class="pub-authors">Your Name, Co-Author One, Co-Author Two</div>
-        <div class="pub-title">Title of Your Paper Goes Here</div>
-        <div class="pub-venue">Conference Name, Year &nbsp;·&nbsp; <a href="#">PDF</a> &nbsp;·&nbsp; <a href="#">Code</a></div>
+        <div class="pub-title">Title of Your First Paper</div>
+        <div class="pub-venue">Conference Name (CONF), 2025 &nbsp;·&nbsp; <a href="#">PDF</a> &nbsp;·&nbsp; <a href="#">Code</a></div>
+      </li>
+      <li>
+        <div class="pub-authors">Your Name, Co-Author</div>
+        <div class="pub-title">Title of Your Second Paper</div>
+        <div class="pub-venue">Workshop at Conference, 2024 &nbsp;·&nbsp; <a href="#">PDF</a></div>
       </li>
     </ul>
-    <p style="margin-top:0.8rem; font-size:0.88rem; color:var(--muted)">
-      → <a href="/publications/">Full list of publications</a>
-    </p>
   </section>
 
+  <!-- Contact -->
   <section>
     <h2>Contact</h2>
     <ul class="link-list">
-      <li><span class="label">Email</span> <a href="mailto:you@university.edu">you@university.edu</a></li>
-      <li><span class="label">Google Scholar</span> <a href="#">scholar.google.com/…</a></li>
-      <li><span class="label">GitHub</span> <a href="#">github.com/yourhandle</a></li>
-      <li><span class="label">Twitter / X</span> <a href="#">@yourhandle</a></li>
+      <li><span class="label">Email</span><a href="mailto:you@university.edu">you@university.edu</a></li>
+      <li><span class="label">Google Scholar</span><a href="#">scholar.google.com/…</a></li>
+      <li><span class="label">GitHub</span><a href="#">github.com/yourhandle</a></li>
+      <li><span class="label">Twitter / X</span><a href="#">@yourhandle</a></li>
+      <li><span class="label">LinkedIn</span><a href="#">linkedin.com/in/yourname</a></li>
     </ul>
   </section>
 
