@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #1a1a1a;
+      --muted:    #555;
+      --faint:    #888;
+      --rule:     #e0e0e0;
+      --link:     #2a5fa8;
+      --bg:       #fafaf8;
+      --serif:    'Lora', Georgia, serif;
+      --sans:     'Source Sans 3', system-ui, sans-serif;
+      --max:      680px;
+      --gap:      2.5rem;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    /* ── Layout ── */
+    .page { max-width: var(--max); margin: 0 auto; }
+
+    /* ── Name ── */
+    .name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.15rem;
+    }
+    .tagline {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ── Nav ── */
+    nav {
+      margin: 1.6rem 0;
+      padding: 0.8rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0;
+    }
+    nav a {
+      font-size: 0.88rem;
+      font-family: var(--sans);
+      font-weight: 400;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      text-transform: lowercase;
+    }
+    nav a:hover { text-decoration: underline; }
+    nav span { color: var(--rule); margin: 0 0.55rem; user-select: none; }
+
+    /* ── Bio block ── */
+    .bio {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: var(--gap);
+    }
+    .bio img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--rule);
+    }
+    .bio p {
+      font-size: 0.97rem;
+      color: var(--ink);
+    }
+
+    /* ── Sections ── */
+    section { margin-bottom: var(--gap); }
+    section + section { border-top: 1px solid var(--rule); padding-top: var(--gap); }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    p { margin-bottom: 0.75rem; font-size: 0.97rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Timeline ── */
+    .timeline { list-style: none; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.55rem;
+      line-height: 1.5;
+    }
+    .timeline .year {
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.85rem;
+      padding-top: 0.05rem;
+    }
+    .timeline .desc { color: var(--ink); }
+
+    /* ── Publications ── */
+    .pub-list { list-style: none; }
+    .pub-list li {
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+    }
+    .pub-title { font-style: italic; color: var(--ink); }
+    .pub-venue { color: var(--muted); font-size: 0.85rem; }
+    .pub-authors { color: var(--faint); font-size: 0.85rem; margin-bottom: 0.15rem; }
+
+    /* ── Links ── */
+    .link-list { list-style: none; }
+    .link-list li { margin-bottom: 0.4rem; font-size: 0.93rem; }
+    .link-list a { color: var(--link); text-decoration: none; }
+    .link-list a:hover { text-decoration: underline; }
+    .link-list .label { color: var(--muted); margin-right: 0.3rem; }
+
+    /* ── General links ── */
+    a { color: var(--link); }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8rem;
+      color: var(--faint);
+    }
+
+    @media (max-width: 480px) {
+      .bio { flex-direction: column; }
+      .timeline li { grid-template-columns: 80px 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="name">Your Name</div>
+    <div class="tagline">PhD Student · Department of Computer Science · Your University</div>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#about">about</a><span>·</span>
+    <a href="#publications">publications</a><span>·</span>
+    <a href="#experience">experience</a><span>·</span>
+    <a href="#links">links</a>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <div class="bio">
+      <!-- Replace with your photo or remove the <img> tag -->
+      <img src="photo.jpg" alt="Portrait" onerror="this.style.display='none'" />
+      <div>
+        <p>
+          I am a researcher working on [your research area]. My interests lie at the intersection
+          of [topic A] and [topic B], with a focus on [specific problem or goal].
+        </p>
+        <p>
+          I am a PhD student at [University] advised by <a href="#">Prof. Name</a>.
+          Previously, I completed my B.Tech / M.Tech at [Previous Institution].
+        </p>
+        <p>
+          I am broadly interested in [interest 1], [interest 2], and [interest 3].
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <div class="pub-authors">Your Name, Co-Author One, Co-Author Two</div>
+        <div class="pub-title">Title of Your Paper Goes Here</div>
+        <div class="pub-venue">Conference / Journal Name, Year &nbsp;·&nbsp; <a href="#">PDF</a> &nbsp;·&nbsp; <a href="#">Code</a></div>
+      </li>
+      <li>
+        <div class="pub-authors">Your Name, Co-Author</div>
+        <div class="pub-title">Another Paper Title</div>
+        <div class="pub-venue">Workshop Name, Year &nbsp;·&nbsp; <a href="#">PDF</a></div>
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.88rem; color:var(--muted)">
+      Full list on <a href="#">Google Scholar</a>.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      <li>
+        <span class="year">2023 – present</span>
+        <span class="desc">PhD student, <a href="#">Your University</a></span>
+      </li>
+      <li>
+        <span class="year">Summer 2023</span>
+        <span class="desc">Research Intern, <a href="#">Some Lab / Company</a></span>
+      </li>
+      <li>
+        <span class="year">2019 – 2023</span>
+        <span class="desc">B.Tech, Your Undergraduate Institution</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Links -->
+  <section id="links">
+    <h2>Links</h2>
+    <ul class="link-list">
+      <li><span class="label">Email</span> <a href="mailto:you@university.edu">you@university.edu</a></li>
+      <li><span class="label">Google Scholar</span> <a href="#">scholar.google.com/…</a></li>
+      <li><span class="label">GitHub</span> <a href="#">github.com/yourhandle</a></li>
+      <li><span class="label">Twitter / X</span> <a href="#">@yourhandle</a></li>
+      <li><span class="label">LinkedIn</span> <a href="#">linkedin.com/in/yourname</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2025 Your Name &nbsp;·&nbsp; Built with plain HTML, hosted on <a href="https://pages.github.com">GitHub Pages</a>.
+  </footer>
+
+</div>
+</body>
+</html>
